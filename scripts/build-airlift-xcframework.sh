@@ -25,7 +25,8 @@ fi
 
 git -C "$BUILD_ROOT" apply --3way "$PATCH_FILE"
 
-"$BUILD_ROOT/build-ios.sh"
+chmod +x "$BUILD_ROOT/build-ios.sh"
+bash "$BUILD_ROOT/build-ios.sh"
 
 rm -rf "$ROOT/Vendor/CarrierLock/AirliftFFI.xcframework"
 cp -R "$BUILD_ROOT/AirliftFFI.xcframework" "$ROOT/Vendor/CarrierLock/AirliftFFI.xcframework"
